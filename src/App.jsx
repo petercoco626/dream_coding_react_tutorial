@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Profile from './components/Profile';
 import Avatar from './components/Avatar';
+import { useState } from 'react';
+import Counter from './components/Counter';
 
 function App() {
   const avatars = [
@@ -28,8 +30,17 @@ function App() {
     },
   ];
 
+  const [totalCount, setTotalCount] = useState(0);
+
+  const handleClickCounter = () => setTotalCount((prev) => prev + 1);
+  const handleClick = (event) => {
+    console.log(event);
+  };
+
   return (
     <>
+      {/** 함수의 원형을 전달해야지 함수의 실행 결과를 전달하면 안된다 handleClick() : X  */}
+      {/* <button onClick={handleClick}>버튼</button>
       <Avatar image={avatars[0].image} isNew={avatars[0].isNew} />
       {avatars.map((avatar) => (
         <Profile
@@ -39,7 +50,14 @@ function App() {
           title={avatar.title}
           isNew={avatar.isNew}
         />
-      ))}
+      ))} */}
+      <div className="total-count">
+        {totalCount > 10 ? `Total Count : ${totalCount} !!!!` : `Total Count : ${totalCount}`}
+      </div>
+      <div className="couter-wrap">
+        <Counter totalCount={totalCount} handleClickCounter={handleClickCounter} />
+        <Counter totalCount={totalCount} handleClickCounter={handleClickCounter} />
+      </div>
     </>
   );
 }

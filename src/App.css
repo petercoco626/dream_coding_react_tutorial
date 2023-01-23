@@ -36,3 +36,32 @@
   height: 200px;
   margin: auto;
 }
+
+.total-count {
+  background-color: #ffe45e;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.couter-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.counter {
+  border: 1px solid #917c12;
+  border-radius: 8px;
+  padding: 3rem 5rem;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+.counter-button {
+  background-color: #8d7c28;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
