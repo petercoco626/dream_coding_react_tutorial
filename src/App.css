@@ -8,10 +8,31 @@
   padding: 1rem;
   background-color: #5454546b;
   border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.image-wrap {
+  position: relative;
 }
 
 .image {
   width: 200px;
   height: 200px;
   border-radius: 100%;
+}
+
+.new-member {
+  padding: 0.5rem;
+  background-color: #e23f3f;
+  color: #ffffff;
+  border-radius: 16px;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+}
+.avatar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
 }
