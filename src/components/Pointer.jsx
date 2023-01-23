@@ -7,10 +7,10 @@ export default function Pointer() {
     <div
       className="pointer-wrap"
       onPointerMove={(e) => {
-        setCoords({
+        setCoords((prev) => ({
           x: e.clientX,
           y: e.clientY,
-        });
+        }));
       }}
     >
       <div
