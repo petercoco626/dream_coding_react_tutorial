@@ -66,6 +66,12 @@
   padding: 0.5rem 1rem;
 }
 
+.pointer-wrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
 .pointer {
   width: 50px;
   height: 50px;

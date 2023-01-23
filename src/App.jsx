@@ -11,7 +11,7 @@ function App() {
   const [avatars, setAvatars] = useState([]);
 
   const [totalCount, setTotalCount] = useState(0);
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  // const [coords, setCoords] = useState({ x: 0, y: 0 });
   const handleClickCounter = () => setTotalCount((prev) => prev + 1);
   const handleClick = (event) => {
     console.log(event);
@@ -29,18 +29,18 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleWindowMouseMove = (event) => {
-      setCoords({
-        x: event.clientX,
-        y: event.clientY,
-      });
-    };
-    window.addEventListener('mousemove', handleWindowMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleWindowMouseMove);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleWindowMouseMove = (event) => {
+  //     setCoords({
+  //       x: event.clientX,
+  //       y: event.clientY,
+  //     });
+  //   };
+  //   window.addEventListener('mousemove', handleWindowMouseMove);
+  //   return () => {
+  //     window.removeEventListener('mousemove', handleWindowMouseMove);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -64,7 +64,7 @@ function App() {
         <Counter totalCount={totalCount} handleClickCounter={handleClickCounter} />
       </div> */}
       {/* <Products /> */}
-      <Pointer coords={coords} />
+      <Pointer />
     </>
   );
 }
