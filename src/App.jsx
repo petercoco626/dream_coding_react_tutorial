@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import Counter from './components/Counter';
 import Products from './components/Products';
 import Pointer from './components/Pointer';
-import Mentor from './components/Mentor';
+import Mentors from './components/Mentors';
 
 function App() {
   const [avatars, setAvatars] = useState([]);
@@ -66,7 +66,7 @@ function App() {
       </div> */}
       {/* <Products /> */}
       {/* <Pointer /> */}
-      <Mentor />
+      <Mentors />
     </>
   );
 }
