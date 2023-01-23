@@ -65,3 +65,11 @@
   border-radius: 8px;
   padding: 0.5rem 1rem;
 }
+
+.pointer {
+  width: 50px;
+  height: 50px;
+  background-color: #e23f3f;
+  border-radius: 100%;
+  position: absolute;
+}

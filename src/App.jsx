@@ -5,12 +5,13 @@ import Avatar from './components/Avatar';
 import { useEffect, useState } from 'react';
 import Counter from './components/Counter';
 import Products from './components/Products';
+import Pointer from './components/Pointer';
 
 function App() {
   const [avatars, setAvatars] = useState([]);
 
   const [totalCount, setTotalCount] = useState(0);
-
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
   const handleClickCounter = () => setTotalCount((prev) => prev + 1);
   const handleClick = (event) => {
     console.log(event);
@@ -25,6 +26,19 @@ function App() {
       });
     return () => {
       console.log('clean avatar datas');
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleWindowMouseMove = (event) => {
+      setCoords({
+        x: event.clientX,
+        y: event.clientY,
+      });
+    };
+    window.addEventListener('mousemove', handleWindowMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleWindowMouseMove);
     };
   }, []);
 
@@ -49,7 +63,8 @@ function App() {
         <Counter totalCount={totalCount} handleClickCounter={handleClickCounter} />
         <Counter totalCount={totalCount} handleClickCounter={handleClickCounter} />
       </div> */}
-      <Products />
+      {/* <Products /> */}
+      <Pointer coords={coords} />
     </>
   );
 }
