@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useImmer } from 'use-immer';
 
-export default function AppMentorsImmer() {
+export default function MentorsImmer() {
   const [person, updatePerson] = useImmer(initialPerson);
   const handleUpdate = () => {
     const prev = prompt(`누구의 이름을 바꾸고 싶은가요?`);

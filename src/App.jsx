@@ -7,6 +7,7 @@ import Counter from './components/Counter';
 import Products from './components/Products';
 import Pointer from './components/Pointer';
 import Mentors from './components/Mentors';
+import AppFrom from './components/AppFrom';
 
 function App() {
   const [avatars, setAvatars] = useState([]);
@@ -66,7 +67,8 @@ function App() {
       </div> */}
       {/* <Products /> */}
       {/* <Pointer /> */}
-      <Mentors />
+      {/* <Mentors /> */}
+      <AppFrom />
     </>
   );
 }
