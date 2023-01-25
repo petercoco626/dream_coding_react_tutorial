@@ -66,11 +66,11 @@ function App() {
         <Counter totalCount={totalCount} handleClickCounter={handleClickCounter} />
         <Counter totalCount={totalCount} handleClickCounter={handleClickCounter} />
       </div> */}
-      {/* <Products /> */}
+      <Products />
       {/* <Pointer /> */}
       {/* <Mentors /> */}
       {/* <AppFrom /> */}
-      {<AppWrap />}
+      {/* {<AppWrap />} */}
     </>
   );
 }
