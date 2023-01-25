@@ -8,6 +8,7 @@ import Products from './components/Products';
 import Pointer from './components/Pointer';
 import Mentors from './components/Mentors';
 import AppFrom from './components/AppFrom';
+import AppWrap from './components/AppWrap';
 
 function App() {
   const [avatars, setAvatars] = useState([]);
@@ -68,7 +69,8 @@ function App() {
       {/* <Products /> */}
       {/* <Pointer /> */}
       {/* <Mentors /> */}
-      <AppFrom />
+      {/* <AppFrom /> */}
+      {<AppWrap />}
     </>
   );
 }
