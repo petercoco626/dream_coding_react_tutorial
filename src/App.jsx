@@ -10,6 +10,10 @@ import Mentors from './components/Mentors';
 import AppFrom from './components/AppFrom';
 import AppWrap from './components/AppWrap';
 
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
+
 function App() {
   const [avatars, setAvatars] = useState([]);
 
@@ -66,7 +70,9 @@ function App() {
         <Counter totalCount={totalCount} handleClickCounter={handleClickCounter} />
         <Counter totalCount={totalCount} handleClickCounter={handleClickCounter} />
       </div> */}
-      <Products />
+      <QueryClientProvider client={queryClient}>
+        <Products />
+      </QueryClientProvider>
       {/* <Pointer /> */}
       {/* <Mentors /> */}
       {/* <AppFrom /> */}
