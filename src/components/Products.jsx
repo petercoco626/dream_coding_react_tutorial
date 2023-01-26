@@ -2,19 +2,29 @@ import React, { useEffect, useState } from 'react';
 // import useProducts from '../hooks/use-products';
 
 import { useQuery } from '@tanstack/react-query';
+import { useQueryClient } from '@tanstack/react-query';
 
 export default function Products() {
   const [count, setCount] = useState(0);
   const [checked, setChecked] = useState(false);
   // const [loading, error, products] = useProducts({ salesOnly: checked });
 
+  const client = useQueryClient();
+
   const {
     isLoading,
     error,
     data: products,
-  } = useQuery(['products'], async () => {
-    return fetch(`data/products.json`).then((res) => res.json());
-  });
+  } = useQuery(
+    ['products', checked],
+    async () => {
+      console.log('fetching');
+      return fetch(`data/${checked ? 'sale_' : ''}products.json`).then((res) => res.json());
+    },
+    {
+      staleTime: 1000 * 60,
+    }
+  );
 
   const handleChange = () => setChecked((prev) => !prev);
   if (isLoading) return <p>Loading</p>;
@@ -35,6 +45,13 @@ export default function Products() {
         ))}
       </ul>
       <button onClick={() => setCount((prev) => prev + 1)}>{count}</button>
+      <button
+        onClick={() => {
+          client.invalidateQueries(['products']);
+        }}
+      >
+        정보가 업데이트 되었음
+      </button>
     </>
   );
 }

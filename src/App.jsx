@@ -12,6 +12,8 @@ import AppWrap from './components/AppWrap';
 
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
 const queryClient = new QueryClient();
 
 function App() {
@@ -24,17 +26,17 @@ function App() {
     console.log(event);
   };
 
-  useEffect(() => {
-    fetch('data/avatars.json')
-      .then((res) => res.json())
-      .then((res) => {
-        setAvatars(res);
-        console.log('get avatar datas');
-      });
-    return () => {
-      console.log('clean avatar datas');
-    };
-  }, []);
+  // useEffect(() => {
+  //   fetch('data/avatars.json')
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       setAvatars(res);
+  //       console.log('get avatar datas');
+  //     });
+  //   return () => {
+  //     console.log('clean avatar datas');
+  //   };
+  // }, []);
 
   // useEffect(() => {
   //   const handleWindowMouseMove = (event) => {
@@ -72,6 +74,7 @@ function App() {
       </div> */}
       <QueryClientProvider client={queryClient}>
         <Products />
+        <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
       {/* <Pointer /> */}
       {/* <Mentors /> */}
